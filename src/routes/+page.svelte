@@ -1,7 +1,31 @@
 <script lang="ts">
-	import { a } from '$lib/index';
-	console.log('asd');
+	import AppHeader from '$lib/app-header/app-header.svelte';
+	import AppResumeTemplates from '$lib/app-resume-templates/app-resume-templates.svelte';
+	import AppResumeEditor from '$lib/app-resume-editor/app-resume-editor.svelte';
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div class="appResumeBuilder">
+	<div class="appResumeBuilder__header">
+		<AppHeader />
+	</div>
+	<div class="appResumeBuilder__content">
+		<AppResumeTemplates />
+		<AppResumeEditor />
+	</div>
+</div>
+
+<style lang="scss">
+	.appResumeBuilder {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		&__header {
+			flex-shrink: 0;
+		}
+		&__content {
+			display: flex;
+			flex: 1;
+			overflow: hidden;
+		}
+	}
+</style>
