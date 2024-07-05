@@ -36,6 +36,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@mdi/font": "^7.4.47"
+		"@mdi/font": "^7.4.47",
+		"html2pdf.js": "^0.10.2",
+		"svelte-grid-extended": "^1.2.1"
 	}
 }

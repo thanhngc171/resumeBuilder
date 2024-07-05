@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { writable } from 'svelte/store';
-	import { fade, fly } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 	const categories: any[] = [
 		{
 			name: 'Cat 1',
@@ -62,13 +62,9 @@
 				></span>
 			</button>
 			{#if $expandedCategories[category.name]}
-				<div class="templatesSelector__categories-templates">
+				<div class="templatesSelector__categories-templates" transition:slide>
 					{#each category.templates as template}
-						<div
-							class="templatesSelector__categories-templates-template"
-							in:fly={{ y: 20, duration: 200, delay: index * 50 }}
-							out:fade={{ duration: 200 }}
-						>
+						<div class="templatesSelector__categories-templates-template">
 							{template.name}
 						</div>
 					{/each}
